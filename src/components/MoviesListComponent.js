@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MovieItemComponent from "./MovieItemComponent";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MovieDetailComponent from "./MovieDetailComponent";
+import { BrowserRouter as Router } from "react-router-dom";
 
 class MoviesListComponent extends Component {
   render() {
@@ -20,10 +19,17 @@ class MoviesListComponent extends Component {
                 <button className="btn btn-primary ml-2" type="button">
                   <span className="fa fa-search mr-2"></span>Search
                 </button>
-                <button className="btn btn-secondary ml-5" type="button">
-                  <span className="fa fa-plus mr-2"></span>Add
-                </button>
               </span>
+            </div>
+            <div className="input-group">
+              <a
+                href="/add"
+                class="btn btn-secondary btn-lg active mt-2"
+                role="button"
+                aria-pressed="true"
+              >
+                Add new movie
+              </a>
             </div>
           </div>
 
@@ -32,10 +38,6 @@ class MoviesListComponent extends Component {
             <MovieItemComponent />
             <MovieItemComponent />
           </div>
-
-          <Switch>
-            <Route path="/movie" component={MovieDetailComponent}></Route>
-          </Switch>
         </Router>
       </div>
     );

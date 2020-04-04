@@ -10,7 +10,7 @@ class Footer extends Component {
           <a href="https://twitter.com/mdo">@mdo</a>.
         </p>
         <p>
-          <a href="#">Back to top</a>
+          <a href="/">Back to top</a>
         </p>
       </footer>
     );
