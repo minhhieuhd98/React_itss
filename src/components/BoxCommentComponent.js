@@ -8,12 +8,12 @@ class BoxCommentComponent extends Component {
           <div class="panel panel-info">
             <div class="panel-body">
               <textarea
-                placeholder="Write your comment here!"
+                placeholder="コメントする..."
                 className="form-control"
               ></textarea>
               <form class="form-inline mt-3">
                 <button class="btn btn-primary pull-right" type="button">
-                  Share
+                  送信
                 </button>
               </form>
             </div>
