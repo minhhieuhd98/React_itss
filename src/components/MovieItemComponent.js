@@ -6,7 +6,6 @@ class MovieItemComponent extends Component {
       <div className="col-md-6">
         <div className="card flex-md-row mb-4 shadow-sm h-md-250">
           <div className="card-body d-flex flex-column align-items-start text-left">
-            <strong className="d-inline-block mb-2 text-primary">World</strong>
             <h3 className="mb-0">Featured post</h3>
             <div className="mb-1 text-muted">Nov 12</div>
             <p className="card-text mb-auto">

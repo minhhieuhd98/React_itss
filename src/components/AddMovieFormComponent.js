@@ -9,17 +9,17 @@ class AddMovieFormComponent extends Component {
             <label for="movie-name">Email address</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="movie-name"
               placeholder="Name..."
             />
             >
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="description">Example textarea</label>
             <textarea class="form-control" id="description" rows="3"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>

@@ -24,7 +24,7 @@ class MoviesListComponent extends Component {
             <div className="input-group">
               <a
                 href="/add"
-                class="btn btn-secondary btn-lg active mt-2"
+                className="btn btn-secondary btn-lg active mt-2"
                 role="button"
                 aria-pressed="true"
               >
