@@ -26,7 +26,7 @@ class MoviesListComponent extends Component {
           releaseDate: "8 November 2019 (Spain)",
           imageUrl:
             "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          isLiked: false,
+          isLiked: true,
         },
         {
           name: "Quý Ông Thế Giới Ngầm",
@@ -42,6 +42,19 @@ class MoviesListComponent extends Component {
       ],
     };
   }
+
+  onChangeStatus = (id) => {
+    console.log("movie id:" + id);
+    this.state.listMovies.map((item, index) => {
+      if (index === id) {
+        item.isLiked = !item.isLiked;
+        this.state.listMovies[id] = item;
+        this.setState({
+          listMovies: this.state.listMovies,
+        });
+      }
+    });
+  };
 
   render() {
     return (
@@ -68,6 +81,8 @@ class MoviesListComponent extends Component {
               releaseDate={movie.releaseDate}
               imageUrl={movie.imageUrl}
               isLiked={movie.isLiked}
+              onUpdateStatus={this.onChangeStatus}
+              onChange={this.onChangeStatus}
             />
           );
         })}

@@ -14,6 +14,11 @@ class MovieItemComponent extends Component {
       isLiked: false,
     };
   }
+
+  handleChangeLiked = (event) => {
+    this.props.onUpdateStatus(this.props.id);
+  };
+
   render() {
     var {
       id,
@@ -25,7 +30,6 @@ class MovieItemComponent extends Component {
       imageUrl,
       isLiked,
     } = this.props;
-    console.log("id:" + this.props.id);
     return (
       // <div className="row mb-2 mt-4"></div>
       <Router>
@@ -48,7 +52,14 @@ class MovieItemComponent extends Component {
                 </div>
                 <a href={"/movie/" + this.props.id}>Continue reading...</a>
                 <div className="movie-like">
-                  <button>
+                  <button
+                    className={
+                      this.props.isLiked === true
+                        ? "btn btn-danger"
+                        : "btn btn-link"
+                    }
+                    onClick={this.handleChangeLiked}
+                  >
                     <i className="fa fa-heart-o"></i>
                   </button>
                 </div>
