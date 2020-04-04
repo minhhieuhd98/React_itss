@@ -1,7 +1,23 @@
 import React, { Component } from "react";
 import BoxCommentComponent from "./BoxCommentComponent";
+import ListCommentComponent from "./ListCommentComponent";
 
 class MovieDetailComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listComments: []
+    };
+    this.handleDeleteToDo = this.handleDeleteToDo.bind(this);
+  }
+  handleAddToDo = item => {
+    this.state.listComments.push(item);
+    this.setState({ listComments: this.state.listComments });
+  };
+  handleDeleteToDo = index => {
+    this.state.listComments.splice(index, 1);
+    this.setState({ listComments: this.state.listComments });
+  };
   render() {
     return (
       <div className="container">
@@ -26,7 +42,18 @@ class MovieDetailComponent extends Component {
             </ul>
           </div>
         </div>
-        <BoxCommentComponent />
+        <BoxCommentComponent onAddToDo={this.handleAddToDo}/>
+        <div>
+          {this.state.listComments.map((item, index) => {
+            return (
+              <ListCommentComponent
+                key={index}
+                comment={item.comment}
+                onToDoDelete={() => this.handleDeleteToDo(index)}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }
