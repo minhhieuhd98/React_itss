@@ -23,18 +23,17 @@ class MovieItemComponent extends Component {
               </ul>
             </div>
             <a href="/movie">Continue reading...</a>
+            <div className="movie-like">
+              <button>
+                <i className="fa fa-heart-o"></i>
+              </button>
+            </div>
           </div>
           <img
             className="card-img-right flex-auto d-none d-lg-block"
             src="src/captain-america.jpg"
             alt="Card image"
           />
-          >
-          <div className="movie-like">
-            <button>
-              <i className="fa fa-heart-o"></i>
-            </button>
-          </div>
         </div>
       </div>
     );
