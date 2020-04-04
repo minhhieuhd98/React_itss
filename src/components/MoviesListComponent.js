@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import MovieItemComponent from "./MovieItemComponent";
 
+function searchingFor(term) {
+  return function (x) {
+    return x.name.toLowerCase().includes(term.toLowerCase()) || !term;
+  };
+}
 class MoviesListComponent extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +45,12 @@ class MoviesListComponent extends Component {
           isLiked: false,
         },
       ],
+      term: "",
     };
+    this.searchHandler = this.searchHandler.bind(this);
+  }
+  searchHandler(event) {
+    this.setState({ term: event.target.value });
   }
 
   onChangeStatus = (id) => {
@@ -66,26 +76,29 @@ class MoviesListComponent extends Component {
               type="text"
               className="form-control"
               placeholder="Nhập từ khóa..."
+              onChange={this.searchHandler}
             />
           </div>
         </div>
-        {this.state.listMovies.map((movie, index) => {
-          return (
-            <MovieItemComponent
-              key={index}
-              id={index}
-              name={movie.name}
-              description={movie.description}
-              rateScore={movie.rateScore}
-              actors={movie.actors}
-              releaseDate={movie.releaseDate}
-              imageUrl={movie.imageUrl}
-              isLiked={movie.isLiked}
-              onUpdateStatus={this.onChangeStatus}
-              onChange={this.onChangeStatus}
-            />
-          );
-        })}
+        {this.state.listMovies
+          .filter(searchingFor(this.state.term))
+          .map((movie, index) => {
+            return (
+              <MovieItemComponent
+                key={index}
+                id={index}
+                name={movie.name}
+                description={movie.description}
+                rateScore={movie.rateScore}
+                actors={movie.actors}
+                releaseDate={movie.releaseDate}
+                imageUrl={movie.imageUrl}
+                isLiked={movie.isLiked}
+                onUpdateStatus={this.onChangeStatus}
+                onChange={this.onChangeStatus}
+              />
+            );
+          })}
       </div>
     );
   }
