@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import About from "../pages/About";
 import MovieDetailComponent from "../components/MovieDetailComponent";
 import FavoriteMovieListPage from "../pages/FavoriteMovieListPage";
-import AddMovieFormComponent from "./AddMovieFormComponent";
 
 class Header extends Component {
   render() {
@@ -16,11 +14,6 @@ class Header extends Component {
               <div className="col-4 pt-1">
                 <a className="text-muted" href="/">
                   Cinema Store
-                </a>
-              </div>
-              <div className="col-4 d-flex justify-content-end align-items-center">
-                <a className="btn btn-sm btn-outline-secondary" href="#">
-                  Register
                 </a>
               </div>
             </div>
@@ -39,11 +32,6 @@ class Header extends Component {
                         Favorite Movie
                       </a>
                     </li>
-                    <li className="nav-item">
-                      <a className="navbar-brand mb-0 h1" href="/about">
-                        About Us.
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </nav>
@@ -57,9 +45,11 @@ class Header extends Component {
               exact
               component={FavoriteMovieListPage}
             ></Route>
-            <Route path="/about" exact component={About}></Route>
-            <Route path="/movie" exact component={MovieDetailComponent}></Route>
-            <Route path="/add" exact component={AddMovieFormComponent}></Route>
+            <Route
+              path="/movie/:id"
+              exact
+              component={MovieDetailComponent}
+            ></Route>
           </Switch>
         </Router>
       </div>
