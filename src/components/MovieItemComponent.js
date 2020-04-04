@@ -25,7 +25,7 @@ class MovieItemComponent extends Component {
       imageUrl,
       isLiked,
     } = this.props;
-    console.log(this.props);
+    console.log("id:" + this.props.id);
     return (
       // <div className="row mb-2 mt-4"></div>
       <Router>
@@ -46,7 +46,7 @@ class MovieItemComponent extends Component {
                     </li>
                   </ul>
                 </div>
-                <a href="/movie/">Continue reading...</a>
+                <a href={"/movie/" + this.props.id}>Continue reading...</a>
                 <div className="movie-like">
                   <button>
                     <i className="fa fa-heart-o"></i>

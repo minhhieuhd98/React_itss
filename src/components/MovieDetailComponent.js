@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BoxCommentComponent from "./BoxCommentComponent";
 import ListCommentComponent from "./ListCommentComponent";
+import { useParams } from "react-router-dom";
 
 class MovieDetailComponent extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class MovieDetailComponent extends Component {
           description:
             "A poor family, the Kims, con their way into becoming...",
           rateScore: 0,
-          actors: [],
+          actors: ["Kang-ho Song", "Sun-kyun Lee", "Yeo-jeong Jo"],
           releaseDate: "21 June 2019 (Vietnam)",
           imageUrl:
             "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -56,8 +57,6 @@ class MovieDetailComponent extends Component {
   render() {
     return (
       <div className="container">
-        <h1 class="my-4">id</h1>
-
         <div class="row">
           <div class="col-md-8">
             <img
@@ -66,21 +65,23 @@ class MovieDetailComponent extends Component {
               alt=""
             />
           </div>
-
-          <div class="col-md-4">
-            <h3 class="my-3">Movie information</h3>
-            <p>
-              A poor family, the Kims, con their way into becoming the servants
-              of a rich family, the Parks. But their easy\n life gets
-              complicated when their deception is threatened with exposure.
-            </p>
-            <h3 class="my-3">Stars</h3>
-            <ul>
-              <li>Kang-ho Song</li>
-              <li>Sun-kyun Lee</li>
-              <li>Yeo-jeong Jo</li>
-            </ul>
-          </div>
+          {this.state.listMovies.map((movie, index) => {
+            if (index == this.props.match.params.id)
+              return (
+                <div class="col-md-4">
+                  <h3 class="my-3">{movie.name}</h3>
+                  <p>{movie.description}</p>
+                  <h3 class="my-3">Stars</h3>
+                  <ul>
+                    {movie.actors.map((actor, index) => {
+                      return <li key="index">{actor}</li>;
+                    })}
+                  </ul>
+                  <strong>Rate: {movie.rateScore}</strong>
+                  <p class="font-italic">Release Date: {movie.releaseDate}</p>
+                </div>
+              );
+          })}
         </div>
         <BoxCommentComponent onAddToDo={this.handleAddToDo} />
         <div>

@@ -46,7 +46,7 @@ class Header extends Component {
               component={FavoriteMovieListPage}
             ></Route>
             <Route
-              path="/movie/"
+              path="/movie/:id"
               exact
               component={MovieDetailComponent}
             ></Route>

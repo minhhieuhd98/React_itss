@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MovieItemComponent from "./MovieItemComponent";
-import { BrowserRouter as Router } from "react-router-dom";
 
 class MoviesListComponent extends Component {
   constructor(props) {
@@ -61,6 +60,7 @@ class MoviesListComponent extends Component {
           return (
             <MovieItemComponent
               key={index}
+              id={index}
               name={movie.name}
               description={movie.description}
               rateScore={movie.rateScore}
