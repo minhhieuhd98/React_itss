@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 class MovieItemComponent extends Component {
   constructor(props) {
@@ -19,22 +19,23 @@ class MovieItemComponent extends Component {
     this.props.onUpdateStatus(this.props.id);
   };
 
+  showRatting = (ratting) => {
+    var result = [];
+    for (var i = 1; i <= ratting; i++) {
+      result.push(<li key={i} className="fa fa-star"></li>);
+    }
+    for (var j = 1; j <= 5 - ratting; j++) {
+      result.push(<li key={j + i} className="fa fa-star-o"></li>);
+    }
+    return result;
+  };
   render() {
-    var {
-      id,
-      name,
-      description,
-      rateScore,
-      actors,
-      releaseDate,
-      imageUrl,
-      isLiked,
-    } = this.props;
+    var { name, description, rateScore, releaseDate, imageUrl } = this.props;
     return (
       // <div className="row mb-2 mt-4"></div>
       <Router>
         <div className="col-md-6">
-          <div className="row mb-2 mt-4">
+          <div className="row mb-2 mt-2">
             <div className="card flex-md-row mb-4 shadow-sm h-md-250">
               <div className="card-body d-flex flex-column align-items-start text-left">
                 <h3 className="name">{name}</h3>
@@ -42,13 +43,7 @@ class MovieItemComponent extends Component {
                 <p className="card-text mb-auto">{description}</p>
                 <div className="rating-start inline">
                   <strong>Rate Score:</strong>
-                  <ul>
-                    <li>
-                      <i className="fa fa-star-o"></i>
-                      <i className="fa fa-star-o"></i>
-                      <i className="fa fa-star-o"></i>
-                    </li>
-                  </ul>
+                  <ul>{this.showRatting(rateScore)}</ul>
                 </div>
                 <a href={"/movie/" + this.props.id}>Continue reading...</a>
                 <div className="movie-like">

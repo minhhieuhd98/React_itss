@@ -28,7 +28,7 @@ class Header extends Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="navbar-brand mb-0 h1" href="/like-movies">
+                      <a className="navbar-brand mb-0 h1" href="/likedMovie">
                         Favorite Movie
                       </a>
                     </li>
@@ -41,7 +41,7 @@ class Header extends Component {
             <Route path="/" exact component={HomePage}></Route>
             <Route path="/home" exact component={HomePage}></Route>
             <Route
-              path="/like-movies"
+              path="/:likedMovie"
               exact
               component={FavoriteMovieListPage}
             ></Route>

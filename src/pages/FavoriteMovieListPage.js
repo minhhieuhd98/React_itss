@@ -8,7 +8,11 @@ class FavoriteMovieListPage extends Component {
     return (
       <div className="App">
         <div>
-          <MoviesListComponent />
+          {this.props.match.params.likedMovie === "likedMovie" ? (
+            <MoviesListComponent statusLiked={true} />
+          ) : (
+            ""
+          )}
         </div>
         <Footer />
       </div>

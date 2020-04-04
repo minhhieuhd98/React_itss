@@ -15,7 +15,7 @@ class MoviesListComponent extends Component {
           name: "Ký Sinh Trùng",
           description:
             "A poor family, the Kims, con their way into becoming...",
-          rateScore: 0,
+          rateScore: 3,
           actors: [],
           releaseDate: "21 June 2019 (Vietnam)",
           imageUrl:
@@ -26,7 +26,7 @@ class MoviesListComponent extends Component {
           name: "Hố Sâu Đói Khát",
           description:
             "A vertical prison with one cell per level. Two people per cell. One only food...",
-          rateScore: 0,
+          rateScore: 4,
           actors: [],
           releaseDate: "8 November 2019 (Spain)",
           imageUrl:
@@ -37,7 +37,7 @@ class MoviesListComponent extends Component {
           name: "Quý Ông Thế Giới Ngầm",
           description:
             "An American expat tries to sell off his highly profitable marijuana empire...",
-          rateScore: 0,
+          rateScore: 2,
           actors: [],
           releaseDate: "21 February 2020 (Vietnam)",
           imageUrl:
@@ -67,38 +67,60 @@ class MoviesListComponent extends Component {
   };
 
   render() {
+    console.log("log:" + this.props.statusLiked);
     return (
       <div>
-        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div className="row col-xs-6 col-sm-6 col-md-6 col-lg-6 mb-2">
           <div className="input-group">
             <input
               name="keyword"
               type="text"
-              className="form-control"
+              className="form-control mb-3"
               placeholder="Nhập từ khóa..."
               onChange={this.searchHandler}
             />
           </div>
         </div>
-        {this.state.listMovies
-          .filter(searchingFor(this.state.term))
-          .map((movie, index) => {
-            return (
-              <MovieItemComponent
-                key={index}
-                id={index}
-                name={movie.name}
-                description={movie.description}
-                rateScore={movie.rateScore}
-                actors={movie.actors}
-                releaseDate={movie.releaseDate}
-                imageUrl={movie.imageUrl}
-                isLiked={movie.isLiked}
-                onUpdateStatus={this.onChangeStatus}
-                onChange={this.onChangeStatus}
-              />
-            );
-          })}
+        <div>
+          {this.props.statusLiked === true
+            ? this.state.listMovies.map((movie, index) => {
+                if (movie.isLiked)
+                  return (
+                    <MovieItemComponent
+                      key={index}
+                      id={index}
+                      name={movie.name}
+                      description={movie.description}
+                      rateScore={movie.rateScore}
+                      actors={movie.actors}
+                      releaseDate={movie.releaseDate}
+                      imageUrl={movie.imageUrl}
+                      isLiked={movie.isLiked}
+                      onUpdateStatus={this.onChangeStatus}
+                      onChange={this.onChangeStatus}
+                    />
+                  );
+              })
+            : this.state.listMovies
+                .filter(searchingFor(this.state.term))
+                .map((movie, index) => {
+                  return (
+                    <MovieItemComponent
+                      key={index}
+                      id={index}
+                      name={movie.name}
+                      description={movie.description}
+                      rateScore={movie.rateScore}
+                      actors={movie.actors}
+                      releaseDate={movie.releaseDate}
+                      imageUrl={movie.imageUrl}
+                      isLiked={movie.isLiked}
+                      onUpdateStatus={this.onChangeStatus}
+                      onChange={this.onChangeStatus}
+                    />
+                  );
+                })}
+        </div>
       </div>
     );
   }
