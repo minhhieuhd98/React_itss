@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import BoxCommentComponent from "./BoxCommentComponent";
-<<<<<<< HEAD
-import { useParams } from "react-router";
-=======
 import ListCommentComponent from "./ListCommentComponent";
->>>>>>> 11504542134b1e6656c0bc9781d3ff0392e95944
 
 class MovieDetailComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
       listMovies: [
         {
           name: "Ký Sinh Trùng",
@@ -46,25 +41,19 @@ class MovieDetailComponent extends Component {
           isLiked: false,
         },
       ],
-    };
-  }
-
-=======
-      listComments: []
+      listComments: [],
     };
     this.handleDeleteToDo = this.handleDeleteToDo.bind(this);
   }
-  handleAddToDo = item => {
+  handleAddToDo = (item) => {
     this.state.listComments.push(item);
     this.setState({ listComments: this.state.listComments });
   };
-  handleDeleteToDo = index => {
+  handleDeleteToDo = (index) => {
     this.state.listComments.splice(index, 1);
     this.setState({ listComments: this.state.listComments });
   };
->>>>>>> 11504542134b1e6656c0bc9781d3ff0392e95944
   render() {
-    var id = useParams();
     return (
       <div className="container">
         <h1 class="my-4">id</h1>
@@ -93,7 +82,7 @@ class MovieDetailComponent extends Component {
             </ul>
           </div>
         </div>
-        <BoxCommentComponent onAddToDo={this.handleAddToDo}/>
+        <BoxCommentComponent onAddToDo={this.handleAddToDo} />
         <div>
           {this.state.listComments.map((item, index) => {
             return (
