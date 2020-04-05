@@ -4,17 +4,17 @@ class BoxCommentComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: ""
+      comment: "",
     };
   }
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     this.props.onAddToDo(this.state);
     this.setState({ comment: "" });
   };
-  handleChangeComment = event => {
+  handleChangeComment = (event) => {
     this.setState({ comment: event.target.value });
   };
-  
+
   render() {
     return (
       <div className="row">
@@ -28,10 +28,15 @@ class BoxCommentComponent extends Component {
                 onChange={this.handleChangeComment}
               ></textarea>
               <form class="form-inline mt-3">
-                <button class="btn btn-primary pull-right" type="button" onClick={this.handleSubmit}>
+                <button
+                  class="btn btn-primary pull-right"
+                  type="button"
+                  onClick={this.handleSubmit}
+                >
                   送信
                 </button>
               </form>
+              <h5>Comment:</h5>
             </div>
           </div>
         </div>
