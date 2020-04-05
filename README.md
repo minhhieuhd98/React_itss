@@ -1,7 +1,8 @@
 
 # ITSS 20192-映画ウェブサイト
 ## チーム7
-* Nguyen MInh Dan
+* Nguyen Minh Dan
+* Nguyen Minh Hieu
 * Phung Thanh Cong 
 * Nguyen Thi Dung
 * Nguyen Anh Duc
