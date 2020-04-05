@@ -65,7 +65,7 @@ class MovieDetailComponent extends Component {
             />
           </div>
           {this.state.listMovies.map((movie, index) => {
-            if (index === this.props.match.params.id)
+            if (index == this.props.match.params.id)
               return (
                 <div class="col-md-4">
                   <h3 class="my-3">{movie.name}</h3>
