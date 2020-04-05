@@ -45,6 +45,7 @@ class MoviesListComponent extends Component {
           isLiked: false,
         },
       ],
+      listMoviesLiked: [],
       term: "",
     };
     this.searchHandler = this.searchHandler.bind(this);
@@ -58,16 +59,25 @@ class MoviesListComponent extends Component {
     this.state.listMovies.map((item, index) => {
       if (index === id) {
         item.isLiked = !item.isLiked;
+        console.log("status: " + item.isLiked);
         this.state.listMovies[id] = item;
         this.setState({
           listMovies: this.state.listMovies,
         });
+
+        localStorage.setItem("list", JSON.stringify(this.state.listMovies));
       }
     });
   };
 
+  componentWillMount() {
+    let list = JSON.parse(localStorage.getItem("list"));
+    this.setState({
+      listMovies: list,
+    });
+  }
+
   render() {
-    console.log("log:" + this.props.statusLiked);
     return (
       <div>
         <div className="row col-xs-6 col-sm-6 col-md-6 col-lg-6 mb-2">
