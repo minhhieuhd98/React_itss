@@ -17,7 +17,7 @@ class BoxCommentComponent extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row mt-5">
         <div class="col-md-8 col-md-offset-3">
           <div class="panel panel-info">
             <div class="panel-body">
@@ -36,7 +36,7 @@ class BoxCommentComponent extends Component {
                   送信
                 </button>
               </form>
-              <h5>Comment:</h5>
+              <h5>コメント:</h5>
             </div>
           </div>
         </div>

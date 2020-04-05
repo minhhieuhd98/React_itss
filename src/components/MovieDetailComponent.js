@@ -56,17 +56,13 @@ class MovieDetailComponent extends Component {
   render() {
     return (
       <div className="container">
-        <div class="row">
-          <div class="col-md-8">
-            <img
-              class="img-fluid"
-              src="https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg"
-              alt=""
-            />
-          </div>
-          {this.state.listMovies.map((movie, index) => {
-            if (index == this.props.match.params.id)
-              return (
+        {this.state.listMovies.map((movie, index) => {
+          if (index == this.props.match.params.id)
+            return (
+              <div className="row">
+                <div class="col-md-8">
+                  <img class="img-fluid" src={movie.imageUrl} alt="" />
+                </div>
                 <div class="col-md-4">
                   <h3 class="my-3">{movie.name}</h3>
                   <p>{movie.description}</p>
@@ -79,9 +75,9 @@ class MovieDetailComponent extends Component {
                   <strong>Rate: {movie.rateScore}</strong>
                   <p class="font-italic">Release Date: {movie.releaseDate}</p>
                 </div>
-              );
-          })}
-        </div>
+              </div>
+            );
+        })}
         <BoxCommentComponent onAddToDo={this.handleAddToDo} />
         <div>
           {this.state.listComments.map((item, index) => {
