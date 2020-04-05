@@ -17,6 +17,21 @@ class FavoriteMovieListPage extends Component {
       listMovies: list,
     });
   }
+  onChangeStatus = (id) => {
+    console.log("movie id:" + id);
+    this.state.listMovies.map((item, index) => {
+      if (index === id) {
+        item.isLiked = !item.isLiked;
+        console.log("status: " + item.isLiked);
+        this.state.listMovies[id] = item;
+        this.setState({
+          listMovies: this.state.listMovies,
+        });
+
+        localStorage.setItem("list", JSON.stringify(this.state.listMovies));
+      }
+    });
+  };
   showListMovieLiked(listMovies) {
     return (
       <div>
