@@ -70,7 +70,7 @@ class MoviesListComponent extends Component {
     });
   };
 
-  componentWillMount() {
+  componentDidCatch() {
     let list = JSON.parse(localStorage.getItem("list"));
     this.setState({
       listMovies: list,
