@@ -22,8 +22,8 @@ class MovieDetailComponent extends Component {
           name: "Hố Sâu Đói Khát",
           description:
             "A vertical prison with one cell per level. Two people per cell. One only food...",
-          rateScore: 0,
-          actors: [],
+          rateScore: 7.9,
+          actors: ["Lee Min Hoo", "Nguyen Minh Hieu :))", "dua day!!"],
           releaseDate: "8 November 2019 (Spain)",
           imageUrl:
             "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -33,11 +33,33 @@ class MovieDetailComponent extends Component {
           name: "Quý Ông Thế Giới Ngầm",
           description:
             "An American expat tries to sell off his highly profitable marijuana empire...",
-          rateScore: 0,
-          actors: [],
+          rateScore: 8,
+          actors: ["Will Smith", "Todd Phillips"],
           releaseDate: "21 February 2020 (Vietnam)",
           imageUrl:
             "https://m.media-amazon.com/images/M/MV5BMTlkMmVmYjktYTc2NC00ZGZjLWEyOWUtMjc2MDMwMjQwOTA5XkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+          isLiked: false,
+        },
+        {
+          name: "1917",
+          description:
+            "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned...",
+          rateScore: 6,
+          actors: ["Joaquin Phoenix", "Robert De Niro"],
+          releaseDate: "21 February 2018 (Vietnam)",
+          imageUrl:
+            "https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+          isLiked: false,
+        },
+        {
+          name: "Joker (2019)",
+          description:
+            "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society....",
+          rateScore: 4,
+          actors: ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
+          releaseDate: "21 February 2019 (Vietnam)",
+          imageUrl:
+            "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
           isLiked: false,
         },
       ],

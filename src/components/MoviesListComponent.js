@@ -44,6 +44,28 @@ class MoviesListComponent extends Component {
             "https://m.media-amazon.com/images/M/MV5BMTlkMmVmYjktYTc2NC00ZGZjLWEyOWUtMjc2MDMwMjQwOTA5XkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_UX182_CR0,0,182,268_AL_.jpg",
           isLiked: false,
         },
+        {
+          name: "1917",
+          description:
+            "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned...",
+          rateScore: 5,
+          actors: [],
+          releaseDate: "21 February 2018 (Vietnam)",
+          imageUrl:
+            "https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+          isLiked: false,
+        },
+        {
+          name: "Joker (2019)",
+          description:
+            "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society....",
+          rateScore: 4,
+          actors: [],
+          releaseDate: "21 February 2019 (Vietnam)",
+          imageUrl:
+            "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+          isLiked: false,
+        },
       ],
       listMoviesLiked: [],
       term: "",
@@ -91,7 +113,7 @@ class MoviesListComponent extends Component {
             />
           </div>
         </div>
-        <div>
+        <div className="row">
           {this.props.statusLiked === true
             ? this.state.listMovies.map((movie, index) => {
                 if (movie.isLiked)

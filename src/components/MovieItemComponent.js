@@ -35,7 +35,7 @@ class MovieItemComponent extends Component {
       // <div className="row mb-2 mt-4"></div>
       <Router>
         <div className="col-md-6">
-          <div className="row mb-2 mt-2">
+          <div className="mb-2 mt-2">
             <div className="card flex-md-row mb-4 shadow-sm h-md-250">
               <div className="card-body d-flex flex-column align-items-start text-left">
                 <h3 className="name">{name}</h3>
