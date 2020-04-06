@@ -19,16 +19,19 @@ class Header extends Component {
             </div>
 
             <div className="flex-nowrap justify-content-between align-items-center mt-3">
-              <nav className="navbar navbar-expand-md bg-light">
-                <div className="collapse navbar-collapse" id="navbarCollapse">
+              <nav className="navbar navbar-expand-md">
+                <div
+                  className="row collapse navbar-collapse"
+                  id="navbarCollapse"
+                >
                   <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
+                    <li className="nav-item btn btn-light">
                       <a className="navbar-brand mb-0 h1" href="/home">
                         Movies List <span className="sr-only">(current)</span>
                       </a>
                     </li>
-                    <li className="nav-item">
-                      <a className="navbar-brand mb-0 h1" href="/like-movies">
+                    <li className="nav-item btn btn-light">
+                      <a className="navbar-brand mb-0 h1" href="/likedMovie">
                         Favorite Movie
                       </a>
                     </li>
@@ -41,7 +44,7 @@ class Header extends Component {
             <Route path="/" exact component={HomePage}></Route>
             <Route path="/home" exact component={HomePage}></Route>
             <Route
-              path="/like-movies"
+              path="/:likedMovie"
               exact
               component={FavoriteMovieListPage}
             ></Route>
