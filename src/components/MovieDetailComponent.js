@@ -62,6 +62,17 @@ class MovieDetailComponent extends Component {
             "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
           isLiked: false,
         },
+        {
+          name: "La Casa de Papel",
+          description:
+            "A group of unique robbers assault the Factory of Moneda and Timbre to carry out the most perfect robbery in the history of Spain and take home 2.4 billion euros.",
+          rateScore: 5,
+          actors: ["Úrsula Corberó", "Álvaro Morte", "Itziar Ituño" ],
+          releaseDate: "4 March 2020 (Vietnam)",
+          imageUrl:
+            "https://m.media-amazon.com/images/M/MV5BZTNiY2FiYzktNWNmMi00YjMzLTkwMWItMGE3ZDc5OWYzODIyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+          isLiked: false,
+        }
       ],
       listComments: [],
     };
