@@ -12,7 +12,8 @@ class FavoriteMovieListPage extends Component {
     this.showListMovieLiked = this.showListMovieLiked.bind(this);
   }
   componentWillMount() {
-    let list = JSON.parse(localStorage.getItem("list"));
+    let list = [];
+    list = JSON.parse(localStorage.getItem("list"));
     this.setState({
       listMovies: list,
     });
@@ -35,24 +36,26 @@ class FavoriteMovieListPage extends Component {
   showListMovieLiked(listMovies) {
     return (
       <div>
-        {listMovies.map((movie, index) => {
-          if (movie.isLiked)
-            return (
-              <MovieItemComponent
-                key={index}
-                id={index}
-                name={movie.name}
-                description={movie.description}
-                rateScore={movie.rateScore}
-                actors={movie.actors}
-                releaseDate={movie.releaseDate}
-                imageUrl={movie.imageUrl}
-                isLiked={movie.isLiked}
-                onUpdateStatus={this.onChangeStatus}
-                onChange={this.onChangeStatus}
-              />
-            );
-        })}
+        {listMovies != null
+          ? listMovies.map((movie, index) => {
+              if (movie.isLiked)
+                return (
+                  <MovieItemComponent
+                    key={index}
+                    id={index}
+                    name={movie.name}
+                    description={movie.description}
+                    rateScore={movie.rateScore}
+                    actors={movie.actors}
+                    releaseDate={movie.releaseDate}
+                    imageUrl={movie.imageUrl}
+                    isLiked={movie.isLiked}
+                    onUpdateStatus={this.onChangeStatus}
+                    onChange={this.onChangeStatus}
+                  />
+                );
+            })
+          : ""}
       </div>
     );
   }
